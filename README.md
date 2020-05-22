@@ -1,2 +1,2 @@
 # REST-API
-# SOLID PRINCIPLES
+# SOLID Principles
