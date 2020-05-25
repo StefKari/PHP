@@ -37,7 +37,7 @@ class Duck {
 
 }
 
-$duck = new Duck(new NormalQuack); // dobijamo ponasanje NoramlDuck
+$duck = new Duck(new NormalQuack); // we got behavior NoramlDuck
 $duck->getBehavior();
 
 
