@@ -1,30 +1,29 @@
 <?php
 
-interface DBConnect {
-  function connect();
+interface MailerInterface {
+  function send();
 }
 
-class MySQL implements DBConnect {
-  public function connect() {
-    return "Database conncetion";
+class SmtpMailer implements MailerInterface {
+  public function send() {
+    // send an email from smtp
   }
 }
 
-class User {
-    private $dbConnect;
-
-    public function __construct(DBConnect $dbConnect) {
-        $this->dbConnect = $dbConnect;
-    }
+class SlackMailer implements MailerInterface {
+  public function send() {
+    // Send a message from Slack
+  }
 }
 
+class WelcomeMessage {
 
+  private $mailer;
 
-
-
-
-
-
+  public function __construct(MailerInterface $mailer) {
+    $this->mailer = $mailer;
+  }
+}
 
 
 
