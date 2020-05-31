@@ -1,35 +1,35 @@
 <?php
 
-interface QuackBehavior {
-  function quack();
+interface MusicGenre {
+  function music();
 }
 
-class NormalQuack implements QuackBehavior {
-  public function quack() {
-    echo  "Quack!<br>";
+class PopMusic implements MusicGenre {
+  public function music() {
+    echo  "Dua Lipa - Don't Start Now<br><br>";
   }
 }
 
-class MuteQuack implements QuackBehavior {
-  public function quack() {
-    echo "<< Silence >><br>";
+class RockMusic implements MusicGenre {
+  public function music() {
+    echo "Pantera - Cemetery Gates<br><br>";
   }
 }
 
-class Squeak implements QuackBehavior {
-  public function quack() {
-    echo "Squeak!<bb>";
+class HipHopMusic implements MusicGenre {
+  public function music() {
+    echo "Eminem - Love Yourself";
   }
 }
 
-$NormalDuck = new NormalQuack();
-$NormalDuck ->quack();
+$PopMusic = new PopMusic();
+$PopMusic ->music();
 
-$MuteQuack = new MuteQuack();
-$MuteQuack->quack();
+$RockMusic = new RockMusic();
+$RockMusic->music();
 
-$Squeak = new Squeak();
-$Squeak->quack();
+$HipHopMusic = new HipHopMusic();
+$HipHopMusic->music();
 
 
 
