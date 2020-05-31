@@ -1,44 +1,43 @@
 <?php
 
-
-interface QuackBehavior {
-  function quack();
+interface MusicGenre {
+  function music();
 }
 
-class NormalQuack implements QuackBehavior {
-  public function quack() {
-    return "Quack!";
+class PopMusic implements MusicGenre {
+  public function music() {
+    return "Dua Lipa - Don't Start Now";
   }
 }
 
-class MuteQuack implements QuackBehavior {
-  public function quack() {
-    return "<< Silence >>";
+class RockMusic implements MusicGenre {
+  public function music() {
+    return "Pantera - Cemetery Gates";
   }
 }
 
-class Squeak implements QuackBehavior {
-  public function quack() {
-    return "Squeak!";
+class HipHopMusic implements MusicGenre {
+  public function music() {
+    return "Eminem - Love Yourself";
   }
 }
 
-class Duck {
+class Music {
 
-  private $quackType;
+  private $genre;
 
-  public function __construct(QuackBehavior $QuackBehavior) {
-    $this->quackType = $QuackBehavior;
+  public function __construct(MusicGenre $musicGenre) {
+    $this->genre = $musicGenre;
   }
 
-  public function getBehavior() {
-    return $this->quackType->quack();
+  public function getGenre() {
+    return $this->genre->music();
   }
 
 }
 
-$duck = new Duck(new NormalQuack); // we got behavior NoramlDuck
-$duck->getBehavior();
+$music = new Music(new RockMusic); // we got genre RockMusic
+echo $music->getGenre();
 
 
 
