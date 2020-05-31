@@ -1,16 +1,16 @@
 <?php
 
-class AnimalDB {
+class HumanDB {
 
   private $servername = "localhost";
   private $username = "username";
   private $password = "password";
-  private $dbName = "baza";
+  private $dbName = "solid";
   private $conn;
 
   public function __construct() {
       try {
-        $this->conn = new PDO("mysql:host=$servername;dbName=baza", $username, $password);
+        $this->conn = new PDO("mysql:host=$servername;dbName=solid", $username, $password);
         $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
           echo "Connected successfully";
       }catch(PDOException $e) {
@@ -20,7 +20,7 @@ class AnimalDB {
   }
 
   public function getName() {
-    $query = "SELECT * FROM animals WHERE id = ".$id.";";
+    $query = "SELECT * FROM humans WHERE id = ".$id.";";
     $stmt = $conn->prepare($query);
     $stmt->execute();
 
@@ -29,7 +29,7 @@ class AnimalDB {
   }
 
   public function save() {
-    $query = "INSERT INTO animals (name) VALUES (".$name.")";
+    $query = "INSERT INTO humans (name) VALUES (".$name.")";
     $stmt = $this->conn->prepare($query);
 
     if($stmt->execute()){
@@ -41,14 +41,14 @@ class AnimalDB {
 
 }
 
-class Animal {
+class Human {
 
-  private $animalDB;
+  private $humanDB;
   private $name;
 
   function __construct($name) {
 		$this->name = $name;
-		$this->animalDb = new AnimalDB();
+		$this->humanDb = new HumanDB();
 	}
 
   public function getName() {
