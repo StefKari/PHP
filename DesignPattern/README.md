@@ -4,16 +4,16 @@
 "It acts exactly as it sounds: this is class that does as the real factory of object instances. In other words, assume that we know that there are factories that produce some kind of a product. We do not care how a factory makes this product, but we know that any factory has one universal way to ask for it".
 
 ### Strategy
-"Objects or entities should be open for extension, but closed for modification".
+"The strategy pattern is based on algorithms. You encapsulate specific families of algorithms allowing the client class responsible for instantiating a particular algorithm to have no knowledge of the actual implementation".
 
 ### Adapter
-"Let q(x) be a property provable about objects of x of type T. Then q(y) should be provable for objects y of type S where S is a subtype of T".
+"This pattern allows you to repurpose a class with a different interface, allowing it to be used by a system which uses different calling methods".
 
 ### Observer
-"A client should never be forced to implement an interface that it doesn't use or clients shouldn't be forced to depend on methods they do not use".
+"An object is made observable by adding a method that allows another object, the observer to get registered. If the observable object gets changed, it sends a message to the objects which are registered as observers".
 
 ### Decorator
-"Entities must depend on abstractions not on concretions. It states that the high level module must not depend on the low level module, but they should depend on abstractions".
+"This pattern allows us to add new or additional behavior to an object during runtime, depending on the situation".
 
 
 
